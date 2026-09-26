@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "command(git diff)",
+      "command(git status)",
+      "command(ls)",
+      "command(git add)",
+      "command(git commit)",
+      "command(git checkout)",
+      "command(git branch)",
+      "command(git switch)",
+      "command(git log)",
+      "command(git show)",
+      "command(./.venv/bin/pytest)",
+      "command(.venv/bin/pytest)",
+      "command(./.venv/bin/python)",
+      "command(.venv/bin/python)",
+      "command(./venv/bin/pytest)",
+      "command(venv/bin/pytest)",
+      "command(./venv/bin/python)",
+      "command(venv/bin/python)",
+      "command(pytest)",
+      "command(python3)",
+      "command(python)",
+      "command(poetry)",
+      "command(uv)"
+    ]
+  }
+}

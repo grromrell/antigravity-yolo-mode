@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Launch or resume Antigravity CLI in full YOLO mode with native permissions auto-approved
+# and ensure the /yolo-mode skill prompt is explicitly activated.
+
+if [ "$#" -eq 0 ]; then
+    exec agy -c --dangerously-skip-permissions -i "/yolo-mode"
+else
+    exec agy -c --dangerously-skip-permissions -i "/yolo-mode $*"
+fi
