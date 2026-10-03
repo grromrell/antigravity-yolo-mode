@@ -1,9 +1,17 @@
 #!/usr/bin/env bash
-# Launch or resume Antigravity CLI in full YOLO mode with native permissions auto-approved
-# and ensure the /yolo-mode skill prompt is explicitly activated.
+# Launch Antigravity CLI in YOLO mode with automatic edit-acceptance.
+# Continues conversation by default. Use -n or --new to start a fresh conversation.
+set -euo pipefail
+
+CONTINUE_FLAG="-c"
+
+if [ "${1:-}" = "-n" ] || [ "${1:-}" = "--new" ]; then
+    CONTINUE_FLAG=""
+    shift
+fi
 
 if [ "$#" -eq 0 ]; then
-    exec agy -c --dangerously-skip-permissions -i "/yolo-mode"
+    exec agy ${CONTINUE_FLAG} --mode accept-edits --dangerously-skip-permissions -i "/yolo on"
 else
-    exec agy -c --dangerously-skip-permissions -i "/yolo-mode $*"
+    exec agy ${CONTINUE_FLAG} --mode accept-edits --dangerously-skip-permissions -i "/yolo on $*"
 fi

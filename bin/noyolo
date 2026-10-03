@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# Resume Antigravity CLI in standard permission mode
-exec agy -c "$@"
